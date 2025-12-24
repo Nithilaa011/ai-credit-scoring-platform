@@ -1,0 +1,5 @@
+monthly_income,avg_upi_transactions,bill_payment_ratio,income_consistency,approved
+25000,60,0.9,0.8,1
+12000,20,0.5,0.4,0
+30000,80,0.95,0.9,1
+15000,30,0.6,0.5,0

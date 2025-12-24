@@ -1,0 +1,6 @@
+timestamp,monthly_income,upi_transactions,bill_payment_ratio,income_consistency,credit_score,risk_level,approved,loan_amount
+2025-12-24 21:41:22,25000,60,0.9,0.8,863,LOW,True,150000
+2025-12-24 21:42:07,25000,60,0.9,0.8,863,LOW,True,150000
+2025-12-24 21:42:17,20000,60,0.9,0.8,899,LOW,True,150000
+2025-12-24 21:42:39,17000,51,0.25,0.1,899,LOW,True,150000
+2025-12-24 21:43:00,3000,51,0.25,0.1,899,LOW,True,150000

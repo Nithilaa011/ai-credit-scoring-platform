@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+
+# Streamlit
+.history
+.history.csv
+
+# OS
+.DS_Store
+
+# Logs
+*.log
