@@ -7,7 +7,7 @@ from datetime import datetime
 # ==============================
 # CONFIG
 # ==============================
-API_URL = "http://127.0.0.1:8000/credit/score"
+API_URL = "https://ai-credit-scoring-platform.onrender.com/credit/score"
 HISTORY_FILE = "history.csv"
 
 st.set_page_config(
