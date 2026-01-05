@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import os
 from datetime import datetime
+import matplotlib.pyplot as plt
+
 
 # ==============================
 # CONFIG
@@ -140,3 +142,51 @@ if os.path.exists(HISTORY_FILE) and os.path.getsize(HISTORY_FILE) > 0:
     )
 else:
     st.info("No history yet. Run a credit evaluation first.")
+
+# ==============================
+# ANALYTICS DASHBOARD
+# ==============================
+st.markdown("---")
+st.subheader("📊 Credit Analytics Dashboard")
+
+if os.path.exists(HISTORY_FILE):
+    df = pd.read_csv(HISTORY_FILE)
+
+    if not df.empty:
+        col1, col2 = st.columns(2)
+
+        # --------------------------
+        # CREDIT SCORE TREND
+        # --------------------------
+        with col1:
+            st.markdown("#### 📈 Credit Score Trend")
+            plt.figure()
+            plt.plot(df["credit_score"], marker="o")
+            plt.xlabel("Evaluation Count")
+            plt.ylabel("Credit Score")
+            st.pyplot(plt)
+
+        # --------------------------
+        # RISK LEVEL DISTRIBUTION
+        # --------------------------
+        with col2:
+            st.markdown("#### ⚠️ Risk Level Distribution")
+            risk_counts = df["risk_level"].value_counts()
+            plt.figure()
+            plt.pie(risk_counts, labels=risk_counts.index, autopct="%1.1f%%")
+            st.pyplot(plt)
+
+        # --------------------------
+        # LOAN APPROVAL RATE
+        # --------------------------
+        st.markdown("#### ✅ Loan Approval Rate")
+        approval_counts = df["approved"].value_counts()
+        plt.figure()
+        plt.bar(approval_counts.index.astype(str), approval_counts.values)
+        plt.xlabel("Approved")
+        plt.ylabel("Count")
+        st.pyplot(plt)
+
+    else:
+        st.info("No analytics available yet.")
+
